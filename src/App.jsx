@@ -1,23 +1,44 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+
+// Pages
+import HomePage from './pages/HomePage';
+
+// CSS imports
+import './index.css';
+import AboutUs from './pages/AboutUs';
+import Contact from './pages/contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl p-6 max-w-md w-full">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">Welcome to TravelNExplore</h1>
-        <p className="text-gray-600 mb-6">Your next adventure begins here. Discover amazing destinations and create unforgettable memories.</p>
-        <div className="flex gap-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
-            Explore Destinations
-          </button>
-          <button className="bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-md transition-colors">
-            Plan Trip
-          </button>
-        </div>
-      </div>
-      <h1 className=''></h1>
-    </div>
+    <Router>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* Add more routes as needed */}
+          {/* <Route path="/domestic" element={<DomesticPage />} />
+          <Route path="/international" element={<InternationalPage />} />
+          <Route path="/trekking" element={<TrekkingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/packages/:id" element={<PackageDetailPage />} /> */}
+        </Routes>
+      </AnimatePresence>
+    </Router>
   );
 }
+
+// Placeholder components for other pages
+// These would be fully developed in separate files
+const DomesticPage = () => <div>Domestic Tours Page</div>;
+const InternationalPage = () => <div>International Tours Page</div>;
+const TrekkingPage = () => <div>Trekking Adventures Page</div>;
+const AboutPage = () => <div>About Us Page</div>;
+const ContactPage = () => <div>Contact Us Page</div>;
+const PackageDetailPage = () => <div>Package Detail Page</div>;
 
 export default App;
