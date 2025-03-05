@@ -85,15 +85,7 @@ const AboutContent = () => {
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#DC2F2F]/10 rounded-full z-0"></div>
             
             {/* Experience badge */}
-            <motion.div 
-              initial={{ scale: 0, rotate: -10 }}
-              animate={storyInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -10 }}
-              transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
-              className="absolute -bottom-10 right-10 bg-[#DC2F2F] text-white py-3 px-6 rounded-lg shadow-lg"
-            >
-              <div className="text-sm">Established</div>
-              <div className="text-2xl font-bold">2010</div>
-            </motion.div>
+           
           </motion.div>
         </motion.div>
         

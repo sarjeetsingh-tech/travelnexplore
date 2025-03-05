@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img src="/logo.png" alt="Travel N Explore Logo" className="h-10 mr-2 bg-white rounded-full p-1" />
               <h3 className="text-xl font-bold">
-                Travel<span className="text-[#DC2F2F]">N</span>Explore
+                Travel<span className="text-[#DC2F2F]">n</span>Explore
               </h3>
             </div>
             <p className="text-gray-300 mb-4">

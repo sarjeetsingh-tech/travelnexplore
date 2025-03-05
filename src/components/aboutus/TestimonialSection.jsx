@@ -9,7 +9,7 @@ const TestimonialSection = () => {
       name: "Rahul and Priya Singh",
       type: "Honeymoon Couple",
       location: "Bali, Indonesia",
-      image: "/images/testimonials/couple-bali.jpg",
+      image: "/images/testimonial-1.jpg",
       quote: "Our honeymoon in Bali was absolutely perfect! Travel N Explore took care of every detail, from luxurious accommodations to private tours. We didn't have to worry about anything and could focus on enjoying this special time together.",
       rating: 5
     },
@@ -17,7 +17,7 @@ const TestimonialSection = () => {
       name: "The Sharma Family",
       type: "Family Vacation",
       location: "Kerala, India",
-      image: "/images/testimonials/family-kerala.jpg",
+      image: "/images/testimonial-2.jpg",
       quote: "Taking our three children on vacation can be stressful, but Travel N Explore made it so easy. The itinerary was perfectly balanced with activities for both adults and kids. The houseboat stay was a highlight none of us will ever forget!",
       rating: 5
     },
@@ -25,7 +25,7 @@ const TestimonialSection = () => {
       name: "St. Xavier's College",
       type: "Educational Tour",
       location: "Rajasthan Heritage Tour",
-      image: "/images/testimonials/school-rajasthan.jpg",
+      image: "/images/testimonial-3.jpg",
       quote: "Organizing a trip for 60 students seemed overwhelming until we partnered with Travel N Explore. Their expertise in educational tours and attention to safety made this a valuable learning experience while keeping everything fun and engaging.",
       rating: 5
     },
@@ -130,7 +130,7 @@ const TestimonialSection = () => {
                     <div className="relative">
                       <div className="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden">
                         <img 
-                          src={testimonials[activeIndex].image || ''} 
+                          src={testimonials[activeIndex].image || '/images/testimonial-1.jpg'} 
                           alt={testimonials[activeIndex].name} 
                           className="w-full h-full object-cover"
                         />
