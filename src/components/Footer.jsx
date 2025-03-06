@@ -90,15 +90,15 @@ const Footer = () => {
             <div className="space-y-4">
               <p className="flex items-start">
                 <span className="mr-3 mt-1">📍</span>
-                <span>123 Travel Street, Adventure City, 10001</span>
+                <span>5th Floor, JMD Megapolis, Sector-48, Sohna Road, Gurugram -122001</span>
               </p>
               <p className="flex items-start">
                 <span className="mr-3 mt-1">📱</span>
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9991005254 </span>
               </p>
               <p className="flex items-start">
                 <span className="mr-3 mt-1">✉️</span>
-                <span>info@travelnexplore.com</span>
+                <span> contact@travelnexplore.in</span>
               </p>
               
             </div>

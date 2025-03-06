@@ -5,7 +5,7 @@ const ContactMapSection = () => {
   const officeLocations = [
     {
       title: "Corporate Office",
-      address: "5th Floor, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122001",
+      address: "5th Floor, JMD Megapolis, Sector-48, Gurugram - 122001",
       phone: "+91 9991005254",
       email: "contact@travelnexplore.in",
       mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.013424264186!2d77.03384931508475!3d28.4275248824807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18bd2e402f3d%3A0x4ecea56e0f94a73!2sJMD%20Megapolis%2C%20Sector%2048%2C%20Gurugram%2C%20Haryana%20122018!5e0!3m2!1sen!2sin!4v1662913142301!5m2!1sen!2sin",

@@ -7,7 +7,7 @@ const TeamSection = () => {
       name: "Rajesh Kumar",
       position: "Chief Executive Officer",
       bio: "With over 20 years in the travel industry, Rajesh brings a wealth of experience and vision to lead Travel N Explore to new heights.",
-      image: "/images/team/ceo.jpg",
+      image: "/images/team.jpg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -18,7 +18,7 @@ const TeamSection = () => {
       name: "Priya Sharma",
       position: "Operations Manager",
       bio: "Priya ensures smooth execution of all travel plans, managing the logistics and operations that make every journey perfect.",
-      image: "/images/team/operations.jpg",
+      image: "/images/team.jpg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -29,7 +29,7 @@ const TeamSection = () => {
       name: "Amit Verma",
       position: "Travel Consultant",
       bio: "Amit specializes in creating personalized travel experiences, with expert knowledge of global destinations.",
-      image: "/images/team/consultant.jpg",
+      image: "/images/team.jpg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -40,7 +40,7 @@ const TeamSection = () => {
       name: "Neha Patel",
       position: "Customer Relations",
       bio: "Neha is dedicated to ensuring every client has an exceptional experience, both before and after their journey.",
-      image: "/images/team/customer.jpg",
+      image: "/images/team.jpg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -124,7 +124,7 @@ const TeamSection = () => {
             >
               <div className="relative overflow-hidden h-72">
                 <img 
-                  src={member.image || '/api/placeholder/300/400'} 
+                  src={member.image || '/images/team.jpg'} 
                   alt={member.name} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -170,32 +170,7 @@ const TeamSection = () => {
         </motion.div>
         
         {/* Join Our Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <h3 className="text-2xl font-bold text-[#363636] mb-4">Want to Join Our Team?</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-            We're always looking for passionate travel enthusiasts to join our growing team. 
-            If you love travel and want to help others explore the world, we'd love to hear from you.
-          </p>
-          <motion.a
-            href="/careers"
-            whileHover={{ 
-              scale: 1.05, 
-              backgroundColor: "#DC2F2F",
-              color: "white",
-              boxShadow: "0 10px 25px rgba(220, 47, 47, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block py-3 px-8 bg-white text-[#DC2F2F] border-2 border-[#DC2F2F] font-medium rounded-full transition-all duration-300"
-          >
-            View Open Positions
-          </motion.a>
-        </motion.div>
+       
       </div>
     </section>
   );

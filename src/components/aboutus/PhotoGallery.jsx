@@ -11,90 +11,92 @@ const PhotoGallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: '/images/gallery/domestic-1.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Taj Mahal, Agra',
       category: 'Domestic',
       location: 'Agra, India'
     },
     {
       id: 2,
-      src: '/images/gallery/international-1.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Eiffel Tower, Paris',
       category: 'International',
       location: 'Paris, France'
     },
     {
       id: 3,
-      src: '/images/gallery/honeymoon-1.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Maldives Beach Resort',
       category: 'Honeymoon',
       location: 'Maldives'
     },
     {
       id: 4,
-      src: '/images/gallery/group-1.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Corporate Group Tour',
       category: 'Group Tours',
       location: 'Manali, India'
     },
     {
       id: 5,
-      src: '/images/gallery/domestic-2.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Jaipur Palace',
       category: 'Domestic',
       location: 'Jaipur, India'
     },
     {
       id: 6,
-      src: '/images/gallery/international-2.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Santorini Island',
       category: 'International',
       location: 'Santorini, Greece'
     },
     {
       id: 7,
-      src: '/images/gallery/honeymoon-2.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Bali Beachfront Villa',
       category: 'Honeymoon',
       location: 'Bali, Indonesia'
     },
     {
       id: 8,
-      src: '/images/gallery/group-2.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'School Trip',
       category: 'Group Tours',
       location: 'Shimla, India'
     },
     {
       id: 9,
-      src: '/images/gallery/domestic-3.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Kerala Backwaters',
       category: 'Domestic',
       location: 'Kerala, India'
     },
     {
       id: 10,
-      src: '/images/gallery/international-3.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Swiss Alps',
       category: 'International',
       location: 'Switzerland'
     },
     {
       id: 11,
-      src: '/images/gallery/honeymoon-3.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Venice Canal',
       category: 'Honeymoon',
       location: 'Venice, Italy'
     },
     {
       id: 12,
-      src: '/images/gallery/group-3.jpg',
+      src: `/images/testimonial-${Math.floor(Math.random() * 3) + 1}.jpg`,
       alt: 'Corporate Retreat',
       category: 'Group Tours',
       location: 'Goa, India'
-    },
+    }
   ];
+  
 
+  
   // Filter images based on active category
   const filteredImages = activeCategory === 'All' 
     ? galleryImages 
