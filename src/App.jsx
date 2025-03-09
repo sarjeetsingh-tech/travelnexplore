@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import LoadingProvider from './context/LoadingContext';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -12,23 +13,25 @@ import Contact from './pages/contact';
 
 function App() {
   return (
-    <Router>
-      <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* Add more routes as needed */}
-          {/* <Route path="/domestic" element={<DomesticPage />} />
-          <Route path="/international" element={<InternationalPage />} />
-          <Route path="/trekking" element={<TrekkingPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/packages/:id" element={<PackageDetailPage />} /> */}
-        </Routes>
-      </AnimatePresence>
-    </Router>
+    <LoadingProvider>
+      <Router>
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Add more routes as needed */}
+            {/* <Route path="/domestic" element={<DomesticPage />} />
+            <Route path="/international" element={<InternationalPage />} />
+            <Route path="/trekking" element={<TrekkingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/packages/:id" element={<PackageDetailPage />} /> */}
+          </Routes>
+        </AnimatePresence>
+      </Router>
+    </LoadingProvider>
   );
 }
 

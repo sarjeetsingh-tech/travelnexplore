@@ -25,7 +25,7 @@ const ContactHero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden"> {/* Removed mt-20 since nav is transparent */}
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-[#363636]">
         {/* Pattern background */}
@@ -100,7 +100,7 @@ const ContactHero = () => {
       
       {/* Main content */}
       <div className="container mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[70vh]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[100vh]">
           {/* Left content */}
           <motion.div 
             ref={ref}
@@ -178,16 +178,16 @@ const ContactHero = () => {
             <div className="relative h-[500px]">
               {/* Destination features */}
               {[
-                { 
-                  icon: "🏝️", 
-                  title: "Beach Escapes", 
-                  description: "Stunning coastal getaways",
-                  color: "#FF894C",
-                  position: "top-0 right-12",
-                  delay: 0.4,
-                  rotate: "rotate-3",
-                  shadow: "shadow-[#FF894C]/20"
-                },
+                // { 
+                //   icon: "🏝️", 
+                //   title: "Beach Escapes", 
+                //   description: "Stunning coastal getaways",
+                //   color: "#FF894C",
+                //   position: "top-0 right-12",
+                //   delay: 0.4,
+                //   rotate: "rotate-3",
+                //   shadow: "shadow-[#FF894C]/20"
+                // },
                 { 
                   icon: "🏔️", 
                   title: "Mountain Adventures", 

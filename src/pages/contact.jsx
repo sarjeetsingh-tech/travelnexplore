@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLoading } from '../context/LoadingContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Contact = () => {
+  const { showLoading, hideLoading } = useLoading();
+  const [contentLoaded, setContentLoaded] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +19,31 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    // Show loading when component mounts
+    showLoading();
+    
+    // Simulate content loading
+    const loadContent = async () => {
+      try {
+        // In a real app, you would load actual data here
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        setContentLoaded(true);
+        hideLoading();
+      } catch (error) {
+        console.error("Error loading content:", error);
+        hideLoading();
+      }
+    };
+    
+    loadContent();
+    
+    return () => {
+      // Ensure loading is hidden when component unmounts
+      hideLoading();
+    };
+  }, [showLoading, hideLoading]);
 
   const travelInterests = [
     "Adventure",
@@ -108,32 +136,50 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!validateForm()) {
       return;
     }
     
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    // Show loading when form is submitted
+    showLoading();
     
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        destination: '',
-        travelDate: '',
-        budget: '',
-        interests: [],
-        message: ''
-      });
-      setSubmitted(false);
-    }, 3000);
+    try {
+      // Here you would typically send the data to your backend
+      console.log("Form submitted:", formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setSubmitted(true);
+      hideLoading();
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          destination: '',
+          travelDate: '',
+          budget: '',
+          interests: [],
+          message: ''
+        });
+        setSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      hideLoading();
+    }
   };
+
+  // Don't render content until loaded
+  if (!contentLoaded) {
+    return null; // The loading indicator is shown by the LoadingContext
+  }
 
   return (
     <div className="min-h-screen bg-[#F8F8F8] flex flex-col ">
@@ -196,16 +242,7 @@ const Contact = () => {
           <div className="bg-white rounded-xl shadow-lg p-8 transform hover:translate-y-[-5px] transition-all duration-300">
             <h2 className="text-3xl font-bold mb-8 text-[#363636] border-b pb-4 border-[#FF894C]">Contact Us</h2>
             
-            <div className="mb-10 text-gray-700 space-y-4">
-              <p>
-                <span className="font-semibold">Travel n Explore - By JETS Duniya Travel Pvt. Ltd.</span> is a fully automated, 
-                technology-driven travel Management Company operating since 2010.
-              </p>
-              <p>
-                We specialize in customizing excursion tours as per your requirements for any number of travelers 
-                anywhere in India, including Group Tours, Leisure Holidays, and Honeymoon Specials.
-              </p>
-            </div>
+           
             
             <div className="mb-8">
               <div className="flex items-center mb-6">
