@@ -173,7 +173,7 @@ const Navbar = () => {
     { name: 'Home', path: '/home', dropdown: null },
     { name: 'Explore Bharat', path: '/domestic', dropdown: 'explore-bharat' },
     { name: 'Explore International', path: '/international', dropdown: 'explore-international' },
-    { name: 'Pilgrims', path: '/pilgrims', dropdown: 'pilgrims' },
+    { name: 'Pilgrims', path: '/pilgrimage', dropdown: 'pilgrims' },
     { name: 'Trekking', path: '/trekking', dropdown: 'trekking' },
     { name: 'About Us', path: '/about-us', dropdown: null },
     { name: 'Contact', path: '/contact', dropdown: null }

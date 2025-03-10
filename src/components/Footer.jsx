@@ -46,7 +46,7 @@ const Footer = () => {
             className="md:w-1/4"
           >
             <div className="flex items-center mb-4">
-              <img src="/logo.png" alt="Travel N Explore Logo" className="h-12 w-12" />
+              {/* <img src="/logo.png" alt="Travel N Explore Logo" className="h-12 w-12" /> */}
               <h3 className="ml-3 text-2xl font-bold font-['Poppins']">
                 Travel<span className="text-[#FF894C]">n</span>Explore
               </h3>

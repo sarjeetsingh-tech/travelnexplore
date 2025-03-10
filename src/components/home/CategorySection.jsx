@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CategorySection = () => {
   const categories = [
@@ -7,19 +8,25 @@ const CategorySection = () => {
       title: "Domestic Escapes",
       description: "Discover the beauty of your own country with our premium domestic packages.",
       imgSrc: "/images/domestic-taj.jpg",
-      link: "#domestic"
+      link: "/domestic"
     },
     {
       title: "International Journeys",
       description: "Experience exotic destinations and make memories that last a lifetime.",
       imgSrc: "/images/international-plane.jpg",
-      link: "#international"
+      link: "/international"
     },
     {
       title: "Trekking Adventures",
       description: "Challenge yourself with our thrilling trekking expeditions worldwide.",
       imgSrc: "/images/trekking-mount.jpg",
-      link: "#trekking"
+      link: "/trekking"
+    },
+    {
+      title: "Pilgrimage Tours",
+      description: "Embark on a spiritual journey to sacred destinations and holy sites.",
+      imgSrc: "/images/pilgrimage-temple.jpg",
+      link: "/pilgrimage"
     }
   ];
 
@@ -41,7 +48,7 @@ const CategorySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category, index) => (
             <motion.div
               key={`category-${index}`}
@@ -50,7 +57,7 @@ const CategorySection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="bg-white rounded-xl overflow-hidden shadow-xl group"
+              className="bg-white rounded-xl overflow-hidden shadow-xl group h-full flex flex-col"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -70,17 +77,17 @@ const CategorySection = () => {
                 </motion.div>
               </div>
               
-              <div className="p-6">
-                <p className="text-[#363636] mb-4">
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-[#363636] mb-4 flex-grow">
                   {category.description}
                 </p>
-                <a
-                  href={category.link}
+                <Link
+                  to={category.link}
                   className="inline-block py-2 px-6 bg-[#FF894C] text-white font-medium rounded-full transition-all duration-300 
                     hover:bg-[#DC2F2F] hover:shadow-md"
                 >
                   Explore
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}
