@@ -5,6 +5,7 @@ import Footer from '../Footer';
 import SocialLinks from '../home/SocialLinks';
 import QuickConnect from '../QuickConnect';
 import { useLocation } from 'react-router-dom';
+import usePageTransition from '../../hooks/usePageTransition';
 
 const PageLayout = ({ 
   children, 
@@ -14,6 +15,9 @@ const PageLayout = ({
   overlay = 'bg-gradient-to-b from-black/70 via-black/50 to-transparent'
 }) => {
   const location = useLocation();
+
+  // Use our custom hook for page transitions with loading
+  usePageTransition(1200);
 
   // Scroll to top on page change
   useEffect(() => {

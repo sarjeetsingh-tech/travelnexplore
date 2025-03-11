@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import LoadingProvider from './context/LoadingContext';
+import LoadingProvider, { useLoading } from './context/LoadingContext';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -14,10 +14,23 @@ import PackageDetailPage from './pages/PackageDetailPage';
 // CSS imports
 import './index.css';
 
+// RouteChangeHandler component to trigger loading on route changes
+const RouteChangeHandler = () => {
+  const location = useLocation();
+  
+  React.useEffect(() => {
+    // Scroll to top on page change
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  return null;
+};
+
 function App() {
   return (
     <LoadingProvider>
       <Router>
+        <RouteChangeHandler />
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<HomePage />} />
