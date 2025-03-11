@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLoading } from '../context/LoadingContext';
-import Navbar from '../components/Navbar';
+import ResponsiveNavbar from '../components/ResponsiveNavbar';
 import Footer from '../components/Footer';
+import SocialLinks from '../components/home/SocialLinks';
+import QuickConnect from '../components/QuickConnect';
 
 const Contact = () => {
   const { showLoading, hideLoading } = useLoading();
@@ -184,7 +186,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-[#F8F8F8] flex flex-col ">
       {/* Navbar */}
-      <Navbar className="mb-12" />
+      <ResponsiveNavbar />
+      <SocialLinks />
+      <QuickConnect />
       
       {/* Enhanced Hero Section */}
       <div className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">

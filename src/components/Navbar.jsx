@@ -340,11 +340,11 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-4">
               <div className="py-10">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
                   {/* Single Image - Takes 3 columns */}
-                  <div className="md:col-span-3">
+                  <div className="md:col-span-3 pl-8">
                     <motion.div 
-                      className="relative h-full w-full overflow-hidden rounded-lg"
+                      className="relative h-full w-full overflow-hidden rounded-lg ml-8"
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5 }}
@@ -415,7 +415,7 @@ const Navbar = () => {
                   </div>
                   
                   {/* Links Section - Takes 9 columns */}
-                  <div className="md:col-span-9">
+                  <div className="md:col-span-9 pl-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                       {/* Recommended Places */}
                       <div>

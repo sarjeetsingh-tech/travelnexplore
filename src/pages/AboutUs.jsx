@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useLoading } from '../context/LoadingContext';
-import Navbar from '../components/Navbar';
+import ResponsiveNavbar from '../components/ResponsiveNavbar';
 import SocialLinks from '../components/home/SocialLinks';
+import QuickConnect from '../components/QuickConnect';
 import AboutHero from '../components/aboutus/AboutHero';
 import AboutContent from '../components/aboutus/AboutContent';
 import PhotoGallery from '../components/aboutus/PhotoGallery';
@@ -41,8 +42,9 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <ResponsiveNavbar />
       <SocialLinks />
+      <QuickConnect />
       <AboutHero />
       <AboutContent />
      

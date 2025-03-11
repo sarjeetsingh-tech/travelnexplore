@@ -1,7 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const CustomizePackageSection = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,12 +54,12 @@ const CustomizePackageSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#363636] via-[#444] to-[#555] text-white">
+    <section className="py-20 bg-gradient-to-br from-[#F8F8F8] to-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
+          ref={ref}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
           className="max-w-7xl mx-auto"
         >
@@ -69,10 +75,10 @@ const CustomizePackageSection = () => {
             className="text-center mb-16"
           >
             <span className="inline-block text-[#FF894C] text-sm font-bold tracking-wider uppercase mb-2">Design Your Dream Trip</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#363636]">
               Customize Your <span className="text-[#FF894C]">Perfect</span> Package
             </h2>
-            <p className="text-white/80 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Create a personalized travel experience tailored exactly to your preferences, 
               timeline, and budget. Our travel experts will bring your dream vacation to life.
             </p>
@@ -86,14 +92,15 @@ const CustomizePackageSection = () => {
                 variants={itemVariants}
                 whileHover={{ 
                   y: -10, 
-                  backgroundColor: "rgba(255, 137, 76, 0.15)",
+                  backgroundColor: "rgba(255, 137, 76, 0.1)",
+                  boxShadow: "0 10px 25px rgba(255, 137, 76, 0.2)",
                   transition: { duration: 0.3 } 
                 }}
-                className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                className="bg-white rounded-xl p-6 border border-gray-100 shadow-md"
               >
                 <div className="text-4xl mb-4">{option.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{option.title}</h3>
-                <p className="text-white/70">{option.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-[#363636]">{option.title}</h3>
+                <p className="text-gray-600">{option.description}</p>
               </motion.div>
             ))}
           </div>
@@ -101,11 +108,11 @@ const CustomizePackageSection = () => {
           {/* Call to Action */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col md:flex-row items-center justify-center gap-8 bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10"
+            className="flex flex-col md:flex-row items-center justify-center gap-8 bg-white rounded-2xl p-8 border border-gray-100 shadow-lg"
           >
             <div className="text-center md:text-left md:flex-1">
-              <h3 className="text-2xl font-bold mb-2">Ready to Create Your Custom Package?</h3>
-              <p className="text-white/80">
+              <h3 className="text-2xl font-bold mb-2 text-[#363636]">Ready to Create Your Custom Package?</h3>
+              <p className="text-gray-600">
                 Our travel specialists are ready to help you design the perfect trip
               </p>
             </div>
@@ -118,7 +125,7 @@ const CustomizePackageSection = () => {
                   boxShadow: "0 10px 25px rgba(220, 47, 47, 0.4)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="py-3 px-8 bg-[#DC2F2F] text-white font-medium rounded-full transition-all duration-300 flex items-center"
+                className="py-3 px-8 bg-[#DC2F2F] text-white font-medium rounded-full transition-all duration-300 flex items-center hover:bg-[#FF894C]"
               >
                 <span>Start Customizing</span>
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,7 +141,7 @@ const CustomizePackageSection = () => {
                   color: "#FF894C"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="py-3 px-8 bg-transparent text-white border border-white/30 font-medium rounded-full transition-all duration-300"
+                className="py-3 px-8 bg-transparent text-[#363636] border border-gray-300 font-medium rounded-full transition-all duration-300 hover:border-[#FF894C]"
               >
                 Contact Expert
               </motion.a>
@@ -144,7 +151,7 @@ const CustomizePackageSection = () => {
           {/* Features List */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-wrap justify-center mt-12 gap-x-8 gap-y-4 text-center text-white/80"
+            className="flex flex-wrap justify-center mt-12 gap-x-8 gap-y-4 text-center text-gray-600"
           >
             <div className="flex items-center">
               <svg className="w-5 h-5 text-[#FF894C] mr-2" fill="currentColor" viewBox="0 0 20 20">

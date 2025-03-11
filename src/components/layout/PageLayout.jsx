@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../Navbar';
+import ResponsiveNavbar from '../ResponsiveNavbar';
 import Footer from '../Footer';
+import SocialLinks from '../home/SocialLinks';
+import QuickConnect from '../QuickConnect';
 import { useLocation } from 'react-router-dom';
 
 const PageLayout = ({ 
@@ -20,7 +22,9 @@ const PageLayout = ({
 
   return (
     <div className="min-h-screen bg-[#F8F8F8]">
-      <Navbar />
+      <ResponsiveNavbar />
+      <SocialLinks />
+      <QuickConnect />
       
       {/* Hero Section */}
       <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden">

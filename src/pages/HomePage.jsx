@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useLoading } from '../context/LoadingContext';
+import { Link } from 'react-router-dom';
 
 // Import Components
-import Navbar from '../components/Navbar';
+import ResponsiveNavbar from '../components/ResponsiveNavbar';
 import Footer from '../components/Footer';
 import HeroSection from '../components/home/HeroSection';
 import CategorySection from '../components/home/CategorySection';
 import PackagesSection from '../components/home/PackagesSection';
 import SocialLinks from '../components/home/SocialLinks';
+import QuickConnect from '../components/QuickConnect';
 
 // import NewsletterSection from '../components/NewsletterSection';
 // import PartnersSection from '../components/PartnersSection';
@@ -42,9 +44,13 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-[#F8F8F8]">
-      <Navbar />
+      <ResponsiveNavbar />
       <SocialLinks />
+      <QuickConnect />
       <HeroSection />
+      
+   
+      
       <CategorySection />
       <PackagesSection />
       <TestimonialSection />
