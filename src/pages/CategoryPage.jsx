@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 import PageLayout from '../components/layout/PageLayout';
 import LocationCard from '../components/packages/LocationCard';
+import RecommendedPackages from '../components/packages/RecommendedPackages';
 import { getPackagesByCategory, getLocationsByCategory } from '../data';
 
 // Valid categories
@@ -135,6 +136,16 @@ const CategoryPage = () => {
           )}
         </div>
       </section>
+
+      {/* Recommended Packages Section */}
+      {locations.length > 0 && (
+        <RecommendedPackages 
+          limit={6}
+          title="Top Rated"
+          subtitle={`${category.charAt(0).toUpperCase() + category.slice(1)} Packages`}
+          customPackages={packages.sort((a, b) => b.rating - a.rating).slice(0, 6)}
+        />
+      )}
     </PageLayout>
   );
 };

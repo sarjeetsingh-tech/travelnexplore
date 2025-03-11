@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 import PageLayout from '../components/layout/PageLayout';
 import PackageCard from '../components/packages/PackageCard';
+import RecommendedPackages from '../components/packages/RecommendedPackages';
 import { getPackagesByCategory } from '../data';
 
 const LocationPage = () => {
@@ -115,6 +116,13 @@ const LocationPage = () => {
           )}
         </div>
       </section>
+
+      {/* Recommended Packages Section */}
+      {packages.length > 0 && (
+        <RecommendedPackages 
+          limit={4} 
+        />
+      )}
     </PageLayout>
   );
 };

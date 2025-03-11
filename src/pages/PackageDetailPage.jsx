@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 
 import PageLayout from '../components/layout/PageLayout';
+import RecommendedPackages from '../components/packages/RecommendedPackages';
 import { getPackageByUid } from '../data';
 
 const PackageDetailPage = () => {
@@ -418,6 +419,9 @@ const PackageDetailPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Recommended Packages Section */}
+      <RecommendedPackages excludePackageId={packageId} limit={4} />
     </PageLayout>
   );
 };
