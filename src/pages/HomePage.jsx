@@ -7,6 +7,7 @@ import usePageTransition from '../hooks/usePageTransition';
 import ResponsiveNavbar from '../components/ResponsiveNavbar';
 import Footer from '../components/Footer';
 import HeroSection from '../components/home/HeroSection';
+import SearchSection from '../components/home/SearchSection';
 import CategorySection from '../components/home/CategorySection';
 import PackagesSection from '../components/home/PackagesSection';
 import SocialLinks from '../components/home/SocialLinks';
@@ -27,6 +28,7 @@ const HomePage = () => {
       <SocialLinks />
       <QuickConnect />
       <HeroSection />
+      <SearchSection />
       
       <CategorySection />
       <PackagesSection />
